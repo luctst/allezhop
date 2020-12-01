@@ -1,0 +1,34 @@
+{
+  "private": true,
+  "name": "clickclack",
+  "version": "1.0.0",
+  "description": "Click clack ça claque",
+  "main": "popup.js",
+  "scripts": {
+    "dev:extension": "webpack-dev-server --mode development --env.mode=development --env.project=ext",
+    "dev:www": "webpack-dev-server --mode development --env.mode=development --env.project=www",
+    "build:extension": "webpack --mode=production --env.mode=production --env.project=extension",
+    "build:www": "webpack --mode=production --env.mode=production --env.project=www"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/preset-react": "^7.12.7",
+    "babel-loader": "^8.2.2",
+    "file-loader": "^6.2.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "html-webpack-plugin": "^4.5.0",
+    "prettier": "^2.2.1",
+    "script-ext-html-webpack-plugin": "^2.1.5",
+    "terser-webpack-plugin": "^5.0.3",
+    "webpack": "^5.9.0",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-pwa-manifest": "^4.3.0"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^5.2.1"
+  }
+}
