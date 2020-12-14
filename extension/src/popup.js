@@ -1,9 +1,6 @@
-import React from 'react';
-import {render} from 'react-dom';
+import Vue from 'vue';
+import App from './App.vue';
 
-render(
-    <>
-        <h1>Extension !</h1>
-    </>,
-    document.getElementById('app')
-)
+new Vue({
+    render: h => h(App)
+}).$mount('#app');
