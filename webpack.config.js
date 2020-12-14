@@ -4,6 +4,7 @@ const terser = require('terser-webpack-plugin');
 const webpackFriendlyMessage = require('friendly-errors-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const webpackPWA = require("webpack-pwa-manifest");
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = function (env) {
     const projectPath = env.project === 'extension' ? 'extension' : 'www';
@@ -42,6 +43,7 @@ module.exports = function (env) {
             theme_color: '#212121',
             background_color: '#212121'
         }),
+        new VueLoaderPlugin()
     ]
 
     const pluginsDev = [];
@@ -94,10 +96,23 @@ module.exports = function (env) {
         module: {
             rules: [
                 {
+                    test: /\.vue$/,
+                    use: {
+                        loader: 'vue-loader',
+                        options: {
+                            source: 'www',
+                            img: 'www',
+                        }
+                    }
+                },
+                {
                     test: /\.js$/,
                     exclude: /(node_modules|bower_components)/,
                     use: {
-                        loader: "babel-loader"
+                        loader: "babel-loader",
+                        options: {
+                            presets: ['@vue/babel-preset-jsx']
+                        }
                     }
                 },
                 {
