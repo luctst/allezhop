@@ -10,14 +10,7 @@
         "persistent": false
     },
     "permissions": [
-        "<all_urls>",
-        "identity",
-        "identity.email",
-        "tabs",
-        "storage",
-        "webRequestBlocking",
-        "declarativeContent",
-        "activeTab"
+        "storage"
     ],
     "browser_action": {
         "default_popup": "dist/index.html",
