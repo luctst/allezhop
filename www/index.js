@@ -1,9 +1,13 @@
-import React from 'react';
-import {render} from 'react-dom';
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import App from './App.vue';
+import router from './router.js';
 
-render(
-    <>
-        <h1>Salut</h1>
-    </>,
-    document.getElementById('app')
-)
+Vue.config.productionTip = false;
+
+Vue.use(VueRouter);
+
+new Vue({
+    render: h => h(App),
+    router
+}).$mount('#app');
